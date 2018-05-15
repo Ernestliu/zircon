@@ -539,6 +539,15 @@ zx_status_t IntelAudioDsp::CreateAndStartStreams() {
                 .pl_sink = PIPELINE1_ID,
             },
         },
+        // Mic
+        {
+            .stream_id = 2,
+            .is_input = true,
+            .pipeline = {
+                .pl_source = PIPELINE2_ID,
+                .pl_sink = PIPELINE3_ID,
+            }
+        },
     };
 
     for (const auto& stream_def : STREAMS) {
