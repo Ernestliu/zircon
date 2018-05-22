@@ -278,6 +278,8 @@ void IntelAudioDsp::DeviceShutdown() {
     ihda_dsp_irq_disable(&ihda_dsp_);
     ihda_dsp_disable(&ihda_dsp_);
 
+    ipc_.Shutdown();
+
     state_ = State::SHUT_DOWN;
 }
 
